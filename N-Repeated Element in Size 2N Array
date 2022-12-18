@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int repeatedNTimes(vector<int>& nums) {
+       int x=0,c=0,n=nums.size()/2;
+        for(int i=0;i<2*n;i++){
+            for(int j=i;j<2*n;j++){
+                if(nums[i] == nums[j])
+                    c++;
+                if(c==n){
+                    x=nums[i];
+                    goto a;
+                }
+                if(j==2*n-1)
+                c=0;
+            }
+        }
+        a: return x;
+    }
+};
