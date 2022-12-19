@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int longestPalindrome(string s) {
+        map<char,int>m;
+        int sum=0,odd=0;
+        for(char c:s){
+            m[c]++;
+        }
+        for(auto& c :m){
+            int n=c.second;
+            if(n %2 ==0)
+            sum +=n;
+            else if(n%2 == 1){
+            odd=1;
+            sum +=n-1;}
+        }
+        if(odd)
+        return sum+1;
+        else
+        return sum;
+    }
+};
