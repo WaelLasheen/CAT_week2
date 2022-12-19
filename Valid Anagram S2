@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        map<char,int>ms;
+        map<char,int>mt;
+        int T=1;
+        if(s.length() != t.length())
+        return false;
+        for(char c:s){
+            ms[c]++;
+        }
+         for(char d:t){
+            mt[d]++;
+        }
+        for(int i=0;i<s.length();i++){
+            if(ms[s[i]] != mt[s[i]]){
+            T=0;
+            break;
+            }
+        }
+        return T==1;
+    } 
+};
