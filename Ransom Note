@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool canConstruct(string r, string m) {
+       map<char,int>m1;
+       map<char,int>m2;
+       for(char c:r)
+       m1[c]++;
+       for(char c:m)
+       m2[c]++;
+       for(char c:r){
+           if(m1[c] > m2[c])
+           return false;
+       }
+       return true;
+    }
+};
