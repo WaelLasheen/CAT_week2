@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<string> findWords(vector<string>& words) {
+       string r1 ="qwertyuiopQWERTYUIOP",r2="asdfghjklASDFGHJKL",r3="zxcvbnmZXCVBNM";
+       map<char,int>row;
+       vector<string>ans;
+       int sum;
+       for(char c:r1)
+       row[c]=0;
+       for(char c:r2)
+       row[c]=2;
+       for(char c:r3)
+       row[c]=5;
+       for(int i=0;i<words.size();i++){
+           sum=0;
+           for(int j=0;j<words[i].length();j++){
+               sum +=row[words[i][j]];
+           }
+           if(sum == 0 || sum == words[i].length()*5 || sum == words[i].length()*2)
+           ans.push_back(words[i]);
+       }
+       return ans;
+    }
+};
