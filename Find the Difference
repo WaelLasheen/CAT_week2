@@ -1,0 +1,19 @@
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        map<char,int>ms;
+        map<char,int>mt;
+        char ans;
+        for(char c:s)
+        ms[c]++;
+        for(char c:t)
+        mt[c]++;
+        for(char i='a';i<='z';i++){
+            if(ms[i] != mt[i]){
+                ans=i;
+                goto a;
+            }
+        }
+        a:return ans;
+    }
+};
