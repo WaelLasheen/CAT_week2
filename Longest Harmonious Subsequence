@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int findLHS(vector<int>& nums) {
+        map<int,int>m;
+        int max=0,x=0;
+        for(int i:nums)
+        m[i]++;
+        for(int i:nums){
+            if(m[i+1] !=0 && m[i]+m[i+1]>max){
+                max=m[i]+m[i+1];
+                x=m[i]+m[i+1];
+            }
+        }
+        return x;
+    }
+};
