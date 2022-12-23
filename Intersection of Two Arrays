@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        vector<int>k;
+        vector<int>ans;
+        map<int,int>m2;
+        sort(nums1.begin(),nums1.end());
+        for(int i=0;i<nums1.size();i++){
+            if(i != nums1.size()-1){
+            if(nums1[i] != nums1[i+1])
+            k.push_back(nums1[i]);
+            }
+            else
+            k.push_back(nums1[i]);
+        }
+        for(int i:nums2)
+        m2[i]++;
+        for(int i=0;i<k.size();i++){
+            if(m2[k[i]] !=0)
+            ans.push_back(k[i]);
+        }
+        return ans;
+    }
+};
