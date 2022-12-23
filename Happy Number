@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+        set<int>c;
+        int sum=0,rem=0;
+        while(true){
+            while(n >0){
+                rem =n%10;
+                sum +=pow(rem,2);
+                n =n / 10;
+            }
+            n=sum;
+            sum=0;
+            if(n==1)
+            return true;
+            if(c.count(n))
+            return false;
+            c.insert(n);
+
+        }
+    }
+};
