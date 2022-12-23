@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<string> uncommonFromSentences(string s1, string s2) {
+        vector<string>v;
+        vector<string>ans;
+        string word;
+        stringstream w(s1);
+        while(w >> word)
+        v.push_back(word);
+        stringstream w2(s2);
+        while(w2 >> word)
+        v.push_back(word);
+        map<string,int>m;
+        for(string c:v)
+        m[c]++;
+        for(string c:v){
+            if(m[c] ==1)
+            ans.push_back(c);
+        }
+        return ans;
+    }
+};
